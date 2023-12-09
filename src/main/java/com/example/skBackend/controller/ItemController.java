@@ -14,13 +14,13 @@ public class ItemController {
 
     private final ItemRepository itemRepository;
 
-    @PostMapping("/employees")
+    @PostMapping("/item")
     Item newItem(@RequestBody Item newItem) {return itemRepository.save(newItem);}
 
-    @GetMapping("/employees")
+    @GetMapping("/item")
     List<Item> itemList(){ return itemRepository.findAll();}
 
-    @DeleteMapping("/employees")
+    @DeleteMapping("/item")
     ResponseEntity deleteItem(@RequestBody Long idItem){
         itemRepository.deleteById(idItem);
         return ResponseEntity.ok().build();

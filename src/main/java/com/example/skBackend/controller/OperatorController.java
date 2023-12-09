@@ -14,13 +14,13 @@ public class OperatorController {
 
     private OperatorRepository operatorRepository;
 
-    @PostMapping("/employees")
+    @PostMapping("/operator")
     Operator newOperator(@RequestBody Operator newOperator){return operatorRepository.save(newOperator);}
 
-    @GetMapping("/employees")
+    @GetMapping("/operator")
     List<Operator> operatorList(){return operatorRepository.findAll();}
 
-    @DeleteMapping("/employees")
+    @DeleteMapping("/operator")
     ResponseEntity deleteOperator(@RequestBody Long idOperator){
         operatorRepository.deleteById(idOperator);
         return ResponseEntity.ok().build();

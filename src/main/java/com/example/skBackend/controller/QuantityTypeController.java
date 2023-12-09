@@ -14,13 +14,13 @@ public class QuantityTypeController {
 
     private final QuantityTypeRepository quantityTypeRepository;
 
-    @PostMapping("/employees")
+    @PostMapping("/quantityType")
     QuantityType newQuantityType(@RequestBody QuantityType newQuantityType){return quantityTypeRepository.save(newQuantityType);}
 
-    @GetMapping("/employee")
+    @GetMapping("/quantityType")
     List<QuantityType> quantityTypeList() {return quantityTypeRepository.findAll();}
 
-    @DeleteMapping("/employess")
+    @DeleteMapping("/quantityType")
     ResponseEntity deleteTypeQuantity(@RequestBody Long idTypeQuantity){
         quantityTypeRepository.deleteById(idTypeQuantity);
         return ResponseEntity.ok().build();

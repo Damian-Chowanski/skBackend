@@ -14,13 +14,13 @@ public class WarehouseController {
 
     private final WarehouseRepository warehouseRepository;
 
-    @PostMapping("/employees")
+    @PostMapping("/warehouse")
     Warehouse newWarehouse(@RequestBody Warehouse newWarehouse){return warehouseRepository.save(newWarehouse);}
 
-    @GetMapping("/employees")
+    @GetMapping("/warehouse")
     List<Warehouse> warehouseList(){return warehouseRepository.findAll();}
 
-    @DeleteMapping("/employees")
+    @DeleteMapping("/warehouse")
     ResponseEntity deleteWarehouse(@RequestBody Long idWarehouse){
         warehouseRepository.deleteById(idWarehouse);
         return ResponseEntity.ok().build();
